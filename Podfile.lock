@@ -1,0 +1,30 @@
+PODS:
+  - Alamofire (2.0.1)
+  - BDKNotifyHUD (1.1.0)
+  - KxMenu (1)
+  - MJRefresh (2.4.10)
+  - ReachabilitySwift (2.0)
+  - SDWebImage (3.7.3):
+    - SDWebImage/Core (= 3.7.3)
+  - SDWebImage/Core (3.7.3)
+  - SwiftyJSON (2.3.0)
+
+DEPENDENCIES:
+  - Alamofire (~> 2.0.1)
+  - BDKNotifyHUD (~> 1.1.0)
+  - KxMenu (~> 1)
+  - MJRefresh (~> 2.4.10)
+  - ReachabilitySwift (~> 2.0)
+  - SDWebImage (~> 3.7.3)
+  - SwiftyJSON (~> 2.3.0)
+
+SPEC CHECKSUMS:
+  Alamofire: 1d8e208d616fbbfd2391b15eae766d07c96cdc49
+  BDKNotifyHUD: 6ae3b0e8e93c709af63e31ab5c8c8011ac3efb8a
+  KxMenu: c025365712f55fa99feb7830fbb7dea0e912be72
+  MJRefresh: e52328552ed9cbfce3501e3820b18bf7643c65cc
+  ReachabilitySwift: 227b98ae7ec99e1c01148b17fb22357aa91a5675
+  SDWebImage: 1d2b1a1efda1ade1b00b6f8498865f8ddedc8a84
+  SwiftyJSON: 8d6b61a70277ef2a5d710d372e06e7e2d87fb9e4
+
+COCOAPODS: 0.39.0.beta.4
