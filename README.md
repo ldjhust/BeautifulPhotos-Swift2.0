@@ -1,7 +1,7 @@
 # BeautifulPhotos-Swift2.0
 重写BeautifulPhotos 使用Swift2.0
 
-轻仿网易云音乐的豆瓣FM播放器
+利用百度图片API获取数据并展示
 
 依赖：Xcode 7.0 Swift 2.0
 
