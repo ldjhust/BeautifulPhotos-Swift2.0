@@ -68,6 +68,7 @@ class MyTitleView: UIView {
     KxMenu.showMenuInView(self.superview, fromRect: sender.frame, menuItems: [
       KxMenuItem("明星", image: nil, target: self, action: "pushMenuItem:"),
       KxMenuItem("美女", image: nil, target: self, action: "pushMenuItem:"),
+      KxMenuItem("动漫", image: nil, target: self, action: "pushMenuItem:"),
       KxMenuItem("壁纸", image: nil, target: self, action: "pushMenuItem:"),
       KxMenuItem("摄影", image: nil, target: self, action: "pushMenuItem:"),
       KxMenuItem("设计", image: nil, target: self, action: "pushMenuItem:"),

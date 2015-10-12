@@ -9,10 +9,12 @@
 import UIKit
 
 class MyImageDataModel {
+  var thumbImageURLString: String
   var imageURLString: String
   var imageId: String // 图片唯一标识
   
-  init(URLString: String, id: String) {
+  init(thumbURLString: String, URLString: String, id: String) {
+    self.thumbImageURLString = thumbURLString  // 缩略图
     self.imageURLString = URLString  // 目前我们只对图片感兴趣，对其他信息不感冒
     self.imageId = id
   }

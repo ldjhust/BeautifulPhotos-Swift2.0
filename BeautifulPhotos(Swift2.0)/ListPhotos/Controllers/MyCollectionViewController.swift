@@ -63,7 +63,9 @@ class MyCollectionViewController: UICollectionViewController, UICollectionViewDe
     super.viewDidLoad()
     
     self.collectionView?.backgroundColor = UIColor.whiteColor()
-    self.collectionView?.contentInset.top = 44
+    self.collectionView?.contentInset.top = 46
+    self.collectionView?.contentInset.left = 2
+    self.collectionView?.contentInset.right = 2
     
     // 注册可重用的cell
     self.collectionView?.registerClass(MyCollectionViewCell.self, forCellWithReuseIdentifier: cellReuseId)
@@ -213,34 +215,34 @@ class MyCollectionViewController: UICollectionViewController, UICollectionViewDe
   func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAtIndex section: Int) -> UIEdgeInsets {
     
     // Margin
-    return UIEdgeInsets(top: 1, left: 0, bottom: 1, right: 0)
+    return UIEdgeInsets(top: 2, left: 0, bottom: 2, right: 0)
   }
   
   func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAtIndex section: Int) -> CGFloat {
     
     // cell水平最小间距
-    return 1.0
+    return 2.0
   }
   
   func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
     
     // cell行最小间距
-    return 1.0
+    return 2.0
   }
   
   func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
     
     // cell的尺寸
-    let width = (self.collectionView!.frame.width - 2) / 3
+    let width = (self.collectionView!.frame.width - 6) / 2
     
-    return CGSize(width: width, height: width)
+    return CGSize(width: width, height: width * 3 / 4)
   }
   
   func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
     
     let width = self.collectionView!.frame.width
     
-    return CGSize(width: width, height: width)
+    return CGSize(width: width, height: width * 3 / 4)
   }
 }
 

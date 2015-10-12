@@ -9,6 +9,7 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import BDKNotifyHUD
 
 class NetworkPersistent {
   
@@ -18,7 +19,13 @@ class NetworkPersistent {
       
       switch result {
       case .Failure(_, _):
-        NSLog ("\(result)")
+        // 获取数据失败，弹出提示框
+        let hud = BDKNotifyHUD.notifyHUDWithImage(UIImage(named: "XXX")!, text: "获取数据失败") as! BDKNotifyHUD
+        hud.center = UIApplication.sharedApplication().keyWindow!.center
+        UIApplication.sharedApplication().keyWindow?.addSubview(hud)
+        hud.presentWithDuration(1.0, speed: 0.5, inView: UIApplication.sharedApplication().keyWindow!) {
+          hud.removeFromSuperview()
+        }
       case .Success(let json):
         // 获取数据放在高优先级全局队列完成
         dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_HIGH, 0)) {
@@ -45,17 +52,17 @@ class NetworkPersistent {
                   // 这个数据是新的
                   return true
                 }).map {
-                  MyImageDataModel(URLString: $0["imageUrl"].string!, id: $0["pictureId"].string!)
+                  MyImageDataModel(thumbURLString: $0["thumbnailUrl"].string!, URLString: $0["imageUrl"].string!, id: $0["pictureId"].string!)
                   } + owner.imageDatas!
               } else {
                 owner.imageDatas = photos?.map {
-                  MyImageDataModel(URLString: $0["imageUrl"].string!, id: $0["pictureId"].string!)
+                  MyImageDataModel(thumbURLString: $0["thumbnailUrl"].string!, URLString: $0["imageUrl"].string!, id: $0["pictureId"].string!)
                 }
               }
             } else {
               // 上拉加载更多
               owner.imageDatas = owner.imageDatas! + photos!.map {
-                MyImageDataModel(URLString: $0["imageUrl"].string!, id: $0["pictureId"].string!)
+                MyImageDataModel(thumbURLString: $0["thumbnailUrl"].string!, URLString: $0["imageUrl"].string!, id: $0["pictureId"].string!)
               }
             }
           }
