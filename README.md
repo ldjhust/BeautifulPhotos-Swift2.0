@@ -5,6 +5,6 @@
 
 依赖：Xcode 7.0 Swift 2.0
 
-测试：iPhone6 iOS9.0
+测试：iPhone6 iOS9.0，未做多屏幕适配，用其他iPhone模拟器可能会走样
 
 ![BeautifulPhotos](https://github.com/ldjhust/BeautifulPhotos-Swift2.0/blob/master/DemoShow.png "BeautifulPhotos")
